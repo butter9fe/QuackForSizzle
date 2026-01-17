@@ -83,7 +83,7 @@ namespace CookOrBeCooked.Systems.InteractionSystem
             OnUnselectedEvent += UnhighlightRenderers;
         }
 
-        private void OnDisable()
+        protected virtual void OnDisable()
         {
             OnSelectedEvent -= HighlightRenderers;
             OnUnselectedEvent -= UnhighlightRenderers;

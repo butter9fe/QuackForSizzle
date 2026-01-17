@@ -139,9 +139,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6855084968421827767, guid: eaf918f416b04a04896b3bffd7db82f1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6d17c8bd617df9d43be3b239f2aae45a, type: 3}
     - target: {fileID: 7543814634285208408, guid: eaf918f416b04a04896b3bffd7db82f1, type: 3}
       propertyPath: m_Name
-      value: IngredientsBox_Base Variant
+      value: IngredientsBox_Steak
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
