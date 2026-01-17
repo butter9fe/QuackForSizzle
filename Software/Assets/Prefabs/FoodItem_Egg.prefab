@@ -212,9 +212,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3428452393170899713, guid: ddba05ac478917c46a6d52438a99e39d, type: 3}
+      propertyPath: _currFoodType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4257294314294532259, guid: ddba05ac478917c46a6d52438a99e39d, type: 3}
       propertyPath: m_Name
-      value: FoodItem_Base Variant
+      value: FoodItem_Egg
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
