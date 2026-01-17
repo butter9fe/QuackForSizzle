@@ -6,17 +6,23 @@ namespace QuackForSizzle.Player
     /// <summary>
     /// Handles the picking up/placing of items
     /// </summary>
-    public class InventoryHandler : CookOrBeCooked.Utility.Singleton<InventoryHandler>
+    public class InventoryHandler : MonoBehaviour
     {
         #region Properties
         [Tooltip("Pivot to parent held inventory items to")]
         [SerializeField] private Transform _inventoryPivot;
 
+        private Controller _thisPlayer;
         private GameObject _heldItem = null;
         public GameObject HeldItem => _heldItem;
         #endregion Properties
 
         #region LifeCycle Methods
+        private void Awake()
+        {
+            _thisPlayer = GetComponentInParent<Controller>();
+        }
+
         private void OnEnable()
         {
             EventManager.Interface.ListenToEvent(Events.PlayerEvent.SetInventory, Listen_SetInventory);
@@ -34,7 +40,7 @@ namespace QuackForSizzle.Player
         private void Listen_SetInventory(ArgsBase e)
         {
             var args = e as EventArgs.Inventory;
-            if (args == null)
+            if (args == null || args.PlayerNumber != _thisPlayer.PlayerNumber)
                 return;
 
             if (_heldItem != null)
@@ -49,6 +55,10 @@ namespace QuackForSizzle.Player
 
         private void Listen_DiscardInventory(ArgsBase e)
         {
+            var args = e as EventArgs.PlayerArgsBase;
+            if (args == null || args.PlayerNumber != _thisPlayer.PlayerNumber)
+                return;
+
             var item = GetInventoryItemOfType<IDiscardableItem>();
             if (item == null)
                 return;

@@ -12,6 +12,7 @@ namespace QuackForSizzle.Player
         #region Properties
         [SerializeField] private Config _playerConfig;
 
+        private Controller _thisPlayer;
         private CharacterController _controller;
         private Vector3 _lateralVelocity = Vector3.zero;
         private Vector3 _verticalVelocity = Vector3.zero;
@@ -21,6 +22,7 @@ namespace QuackForSizzle.Player
         private void Awake()
         {
             _controller = GetComponent<CharacterController>();
+            _thisPlayer = GetComponent<Controller>();
         }
 
         private void OnEnable()
@@ -70,7 +72,7 @@ namespace QuackForSizzle.Player
         private void Listen_UpdateMove(ArgsBase e)
         {
             EventArgs.Move args = e as EventArgs.Move;
-            if (args == null || !_controller.enabled)
+            if (args == null || !_controller.enabled || args.Player != _thisPlayer.PlayerNumber)
                 return;
 
             // Calculate movement direction based on camera direction
@@ -93,6 +95,10 @@ namespace QuackForSizzle.Player
 
         private void Listen_StopMove(ArgsBase e)
         {
+            EventArgs.InputArgsBase args = e as EventArgs.InputArgsBase;
+            if (args == null || args.Player != _thisPlayer.PlayerNumber)
+                return;
+
             _lateralVelocity = Vector3.zero;
         }
 

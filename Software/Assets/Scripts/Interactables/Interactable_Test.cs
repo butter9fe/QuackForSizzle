@@ -1,23 +1,26 @@
 using UnityEngine;
 using CookOrBeCooked.Systems.InteractionSystem;
 
-/// <summary>
-/// 
-/// </summary>
-public class Interactable_Test : InteractableObjectBase
+namespace QuackForSizzle.Interactables
 {
-    public override void OnActionCancelled()
+    /// <summary>
+    /// 
+    /// </summary>
+    public class Interactable_Test : InteractableObjectBase
     {
-        // Do nothing
-    }
+        public override void OnActionCancelled(Player.PlayerNumber playerNumber)
+        {
+            // Do nothing
+        }
 
-    public override void OnActionHeld()
-    {
-        // Do nothing
-    }
+        public override void OnActionHeld(Player.PlayerNumber playerNumber)
+        {
+            // Do nothing
+        }
 
-    public override void OnActionPerformed()
-    {
-        Debug.Log("Interacted: " + gameObject.name);
+        public override void OnActionPerformed(Player.PlayerNumber playerNumber)
+        {
+            Debug.Log("Interacted: " + gameObject.name);
+        }
     }
 }

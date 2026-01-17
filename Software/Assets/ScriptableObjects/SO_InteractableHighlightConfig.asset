@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 047acd6ec7f70fa48bcd3e6418a3e26e, type: 3}
   m_Name: SO_InteractableHighlightConfig
   m_EditorClassIdentifier: 
-  HighlightColor: {r: 0.335849, g: 0.26917785, b: 0.17426126, a: 0.5}
-  HighlightIntensity: 0.4
+  HighlightColor: {r: 0.39607844, g: 0.2509804, b: 0.2509804, a: 1}
+  HighlightIntensity: 1

@@ -3,5 +3,5 @@ using UnityEngine;
 namespace QuackForSizzle.Player
 {
     [AddComponentMenu("Scripts/PlayerEventManager")]
-    public class EventManager : EventManagerBase<Events.PlayerEvent, ArgsBase> { }
+    public class EventManager : EventManagerBase<Events.PlayerEvent, EventArgs.PlayerArgsBase> { }
 }

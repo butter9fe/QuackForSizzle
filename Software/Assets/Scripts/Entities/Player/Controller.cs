@@ -1,4 +1,6 @@
+using CookOrBeCooked.Systems.EventSystem;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace QuackForSizzle.Player
 {
@@ -7,22 +9,14 @@ namespace QuackForSizzle.Player
     /// </summary>
     public class Controller : MonoBehaviour
     {
-        #region Fields
-        #endregion Fields
+        [SerializeField] public PlayerNumber PlayerNumber;
 
-        #region Properties
-        #endregion Properties
+        private InventoryHandler _inventoryHandler;
+        public InventoryHandler InventoryHandler => _inventoryHandler;
 
-        #region Events
-        #endregion Events
-
-        #region LifeCycle Methods
-        #endregion LifeCycle Methods
-
-        #region Public Methods
-        #endregion Public Methods
-
-        #region Private Methods
-        #endregion Private Methods
+        private void Awake()
+        {
+            _inventoryHandler = GetComponentInChildren<InventoryHandler>();
+        }
     }
 }

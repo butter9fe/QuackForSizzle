@@ -9,10 +9,12 @@ namespace QuackForSizzle.Player
     public class AnimationHandler : MonoBehaviour
     {
         private Animator _animator;
+        private Controller _thisPlayer;
 
         private void Awake()
         {
             _animator = GetComponent<Animator>();
+            _thisPlayer = GetComponent<Controller>();
         }
 
         private void OnEnable()
@@ -34,7 +36,7 @@ namespace QuackForSizzle.Player
         private void Listen_StartMove(ArgsBase e)
         {
             EventArgs.Move args = e as EventArgs.Move;
-            if (args == null)
+            if (args == null || args.Player != _thisPlayer.PlayerNumber)
                 return;
 
             _animator.SetBool("IsMoving", true);
@@ -42,11 +44,19 @@ namespace QuackForSizzle.Player
 
         private void Listen_StopMove(ArgsBase e)
         {
+            EventArgs.InputArgsBase args = e as EventArgs.InputArgsBase;
+            if (args == null || args.Player != _thisPlayer.PlayerNumber)
+                return;
+
             _animator.SetBool("IsMoving", false);
         }
 
         private void Listen_Interact(ArgsBase e)
         {
+            EventArgs.InputArgsBase args = e as EventArgs.InputArgsBase;
+            if (args == null || args.Player != _thisPlayer.PlayerNumber)
+                return;
+
             _animator.SetTrigger("Interact");
         }
     }

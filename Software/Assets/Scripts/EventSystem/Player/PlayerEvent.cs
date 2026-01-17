@@ -23,7 +23,15 @@ namespace QuackForSizzle.Player
 
     namespace EventArgs
     {
-        public class Inventory : ArgsBase
+        public class PlayerArgsBase : ArgsBase
+        {
+            public PlayerNumber PlayerNumber;
+            public PlayerArgsBase(PlayerNumber playerNumber) : base()
+            {
+                this.PlayerNumber = playerNumber;
+            }
+        }
+        public class Inventory : PlayerArgsBase
         {
             public GameObject Item;
 
@@ -31,7 +39,7 @@ namespace QuackForSizzle.Player
             /// Player - Set inventory to a new item
             /// </summary>
             /// <param name="item">item to hold</param>
-            public Inventory(GameObject item) : base()
+            public Inventory(PlayerNumber playerNumber, GameObject item) : base(playerNumber)
             {
                 this.Item = item;
             }

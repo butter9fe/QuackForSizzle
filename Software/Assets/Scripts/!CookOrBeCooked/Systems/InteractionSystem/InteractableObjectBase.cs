@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections;
+using QuackForSizzle;
+using QuackForSizzle.Player;
 
 namespace CookOrBeCooked.Systems.InteractionSystem
 {
@@ -40,18 +42,24 @@ namespace CookOrBeCooked.Systems.InteractionSystem
 
         private Renderer[] _renderers = new Renderer[0]; // List of Renderer to highlight
         private bool _isSelected = false;
-        public bool IsSelected
+        public bool IsSelected => _isSelected;
+        public void SetIsSelected(bool selected, PlayerNumber? currPlayer = null)
         {
-            get => _isSelected;
-            set
+            _isSelected = selected;
+
+            if (selected)
             {
-                _isSelected = value;
-                if (_isSelected)
-                    OnSelectedEvent?.Invoke(this);
-                else
-                    OnUnselectedEvent?.Invoke(this);
+                OnSelectedEvent?.Invoke(this);
+                _currSelectedPlayer = currPlayer.Value;
+            }
+            else
+            {
+                OnUnselectedEvent?.Invoke(this);
+                _currSelectedPlayer = null;
             }
         }
+
+        protected PlayerNumber? _currSelectedPlayer = null;
         #endregion Properties
 
         #region Events
@@ -69,7 +77,7 @@ namespace CookOrBeCooked.Systems.InteractionSystem
         protected virtual void OnEnable()
         {
             StartCoroutine(GetRenderers());
-            IsSelected = false;
+            _isSelected = false;
 
             OnSelectedEvent += HighlightRenderers;
             OnUnselectedEvent += UnhighlightRenderers;
@@ -83,9 +91,9 @@ namespace CookOrBeCooked.Systems.InteractionSystem
         #endregion LifeCycle Methods
 
         #region Public Methods
-        public abstract void OnActionPerformed();
-        public abstract void OnActionHeld();
-        public abstract void OnActionCancelled();
+        public abstract void OnActionPerformed(PlayerNumber playerNumber);
+        public abstract void OnActionHeld(PlayerNumber playerNumber);
+        public abstract void OnActionCancelled(PlayerNumber playerNumber);
 
         public void SetRenderersParent(Transform newRenderersParent)
         {

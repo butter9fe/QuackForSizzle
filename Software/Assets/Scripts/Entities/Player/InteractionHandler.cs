@@ -11,6 +11,7 @@ namespace QuackForSizzle.Player
         #endregion Properties
 
         #region LifeCycle Methods
+
         protected override void OnEnable()
         {
             base.OnEnable();
@@ -31,26 +32,38 @@ namespace QuackForSizzle.Player
         #region Listeners
         private void Listen_OnActionPerformed(ArgsBase e)
         {
-            if (_currInteractable == null)
+			EventArgs.InputArgsBase args = e as EventArgs.InputArgsBase;
+			if (args == null || args.Player != _thisPlayer.PlayerNumber)
+				return;
+
+			if (_currInteractable == null)
                 return;
 
-            _currInteractable.OnActionPerformed();
+            _currInteractable.OnActionPerformed(_thisPlayer.PlayerNumber);
         }
 
         private void Listen_OnActionHeld(ArgsBase e)
         {
-            if (_currInteractable == null)
+			EventArgs.InputArgsBase args = e as EventArgs.InputArgsBase;
+			if (args == null || args.Player != _thisPlayer.PlayerNumber)
+				return;
+
+			if (_currInteractable == null)
                 return;
 
-            _currInteractable.OnActionHeld();
+            _currInteractable.OnActionHeld(_thisPlayer.PlayerNumber);
         }
 
         private void Listen_OnActionCancelled(ArgsBase e)
         {
-            if (_currInteractable == null)
+			EventArgs.InputArgsBase args = e as EventArgs.InputArgsBase;
+			if (args == null || args.Player != _thisPlayer.PlayerNumber)
+				return;
+
+			if (_currInteractable == null)
                 return;
 
-            _currInteractable.OnActionCancelled();
+            _currInteractable.OnActionCancelled(_thisPlayer.PlayerNumber);
         }
         #endregion Listeners
 
@@ -62,7 +75,7 @@ namespace QuackForSizzle.Player
             base.UnselectCurrentInteractable();
 
             // Release Press and Hold if unselected, regardless of player action
-            _currInteractable.OnActionCancelled();
+            _currInteractable.OnActionCancelled(_thisPlayer.PlayerNumber);
         }
     }
 }

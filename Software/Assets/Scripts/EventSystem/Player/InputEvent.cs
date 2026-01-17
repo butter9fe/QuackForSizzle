@@ -6,7 +6,7 @@ namespace QuackForSizzle.Player
 {
     namespace Events
     {
-        public enum Input
+        public enum InputEvent
         {
             /// <summary>
             /// Player - Movement Start. 

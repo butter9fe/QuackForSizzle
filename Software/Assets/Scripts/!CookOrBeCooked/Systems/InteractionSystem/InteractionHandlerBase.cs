@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using QuackForSizzle.Player;
 
 namespace CookOrBeCooked.Systems.InteractionSystem
 {
@@ -22,9 +23,16 @@ namespace CookOrBeCooked.Systems.InteractionSystem
 
         protected HashSet<InteractableObjectBase> _interactablesInRange = new HashSet<InteractableObjectBase>();
         protected InteractableObjectBase _currInteractable = null;
+
+        protected Controller _thisPlayer;
         #endregion Properties
 
         #region LifeCycle Methods
+        protected virtual void Awake()
+        {
+            _thisPlayer = GetComponentInParent<Controller>();
+        }
+
         protected virtual void OnEnable()
         {
             _currInteractable = null;
@@ -79,7 +87,7 @@ namespace CookOrBeCooked.Systems.InteractionSystem
 
             // Select new interactable, if any
             if (newInteractable != null)
-                newInteractable.IsSelected = true;
+                newInteractable.SetIsSelected(true, _thisPlayer.PlayerNumber);
 
             _currInteractable = newInteractable;
         }
@@ -122,7 +130,7 @@ namespace CookOrBeCooked.Systems.InteractionSystem
                 return;
 
             // Unselect interactable, calling relevant unselect events
-            _currInteractable.IsSelected = false;
+            _currInteractable.SetIsSelected(false);
         }
 
         /// <summary>
