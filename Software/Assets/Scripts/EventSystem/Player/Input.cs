@@ -6,7 +6,7 @@ namespace QuackForSizzle.Player
 {
     namespace Events
     {
-        public enum InputEvent
+        public enum Input
         {
             /// <summary>
             /// Player - Movement Start. 
@@ -54,7 +54,15 @@ namespace QuackForSizzle.Player
 
     namespace EventArgs
     {
-        public class Move : ArgsBase
+        public class InputArgsBase : ArgsBase
+        {
+            public PlayerNumber Player;
+            public InputArgsBase(PlayerNumber player) {
+                this.Player = player;
+            }
+        }
+
+        public class Move : InputArgsBase
         {
             public Vector2 InputVector;
 
@@ -62,10 +70,16 @@ namespace QuackForSizzle.Player
             /// Player - Movement Start/Update/Stop.
             /// </summary>
             /// <param name="inputVector">Move vector of input</param>
-            public Move(Vector2 inputVector) : base()
+            public Move(PlayerNumber player, Vector2 inputVector) : base(player)
             {
                 this.InputVector = inputVector;
             }
         }
+    }
+
+    public enum PlayerNumber
+    {
+        Player1,
+        Player2
     }
 }
