@@ -11354,6 +11354,7 @@ GameObject:
   - component: {fileID: 1128544724}
   - component: {fileID: 1128544726}
   - component: {fileID: 1128544725}
+  - component: {fileID: 1128544727}
   m_Layer: 0
   m_Name: BluetoothManager
   m_TagString: Untagged
@@ -11398,6 +11399,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 82fd49299640e064ea4dd7a4d955f67d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1128544727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128544723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3616ed1ac9fa1df419d764545ff331a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1171307860 stripped
