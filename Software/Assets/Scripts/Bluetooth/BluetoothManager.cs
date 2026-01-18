@@ -9,8 +9,8 @@ using QuackForSizzle.Player;
 
 public class BluetoothManager : CookOrBeCooked.Utility.Singleton<BluetoothManager>
 {
-    const string deviceName1 = "Pan_2";
-    const string deviceName2 = "Pan_1";
+    const string deviceName1 = "Pan_1";
+    const string deviceName2 = "Pan_2";
     string received_message;
     BluetoothHelper bluetoothHelper1;
     BluetoothHelper bluetoothHelper2;
