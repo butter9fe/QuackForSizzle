@@ -77,6 +77,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3b1653b674747e408e7f245a4e6f9d7, type: 3}
+--- !u!1 &1342144824820062291 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e3b1653b674747e408e7f245a4e6f9d7, type: 3}
+  m_PrefabInstance: {fileID: 2189075194663560450}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1867746139813905129 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e3b1653b674747e408e7f245a4e6f9d7, type: 3}
@@ -164,6 +169,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f7bda595de5c6c547be02327d037213c, type: 3}
   m_PrefabInstance: {fileID: 7025660004440204074}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7872645491465313915 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f7bda595de5c6c547be02327d037213c, type: 3}
+  m_PrefabInstance: {fileID: 7025660004440204074}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8389764838780277889
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -216,6 +226,18 @@ PrefabInstance:
       propertyPath: _currFoodType
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3428452393170899713, guid: ddba05ac478917c46a6d52438a99e39d, type: 3}
+      propertyPath: _foodTypeToModelDict._serializedList.Array.data[0].Value
+      value: 
+      objectReference: {fileID: 8488280882887603829}
+    - target: {fileID: 3428452393170899713, guid: ddba05ac478917c46a6d52438a99e39d, type: 3}
+      propertyPath: _foodTypeToModelDict._serializedList.Array.data[1].Value
+      value: 
+      objectReference: {fileID: 7872645491465313915}
+    - target: {fileID: 3428452393170899713, guid: ddba05ac478917c46a6d52438a99e39d, type: 3}
+      propertyPath: _foodTypeToModelDict._serializedList.Array.data[2].Value
+      value: 
+      objectReference: {fileID: 1342144824820062291}
     - target: {fileID: 4257294314294532259, guid: ddba05ac478917c46a6d52438a99e39d, type: 3}
       propertyPath: m_Name
       value: FoodItem_Egg
@@ -316,6 +338,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24632f659ef42634f93f61066edfce97, type: 3}
+--- !u!1 &8488280882887603829 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 24632f659ef42634f93f61066edfce97, type: 3}
+  m_PrefabInstance: {fileID: 8722636491258071844}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9117465779266219215 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 24632f659ef42634f93f61066edfce97, type: 3}

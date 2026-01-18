@@ -52,6 +52,18 @@ PrefabInstance:
       propertyPath: _currFoodType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3428452393170899713, guid: ddba05ac478917c46a6d52438a99e39d, type: 3}
+      propertyPath: _foodTypeToModelDict._serializedList.Array.data[0].Value
+      value: 
+      objectReference: {fileID: 5841836770470396433}
+    - target: {fileID: 3428452393170899713, guid: ddba05ac478917c46a6d52438a99e39d, type: 3}
+      propertyPath: _foodTypeToModelDict._serializedList.Array.data[1].Value
+      value: 
+      objectReference: {fileID: 2854772984008674591}
+    - target: {fileID: 3428452393170899713, guid: ddba05ac478917c46a6d52438a99e39d, type: 3}
+      propertyPath: _foodTypeToModelDict._serializedList.Array.data[2].Value
+      value: 
+      objectReference: {fileID: 2854772984008674591}
     - target: {fileID: 4257294314294532259, guid: ddba05ac478917c46a6d52438a99e39d, type: 3}
       propertyPath: m_Name
       value: FoodItem_Pancakes
@@ -149,6 +161,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 518888b1322e8b84d87e0bbb8b6609a7, type: 3}
+--- !u!1 &2854772984008674591 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 518888b1322e8b84d87e0bbb8b6609a7, type: 3}
+  m_PrefabInstance: {fileID: 3125314758072676430}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3230734923665528741 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 518888b1322e8b84d87e0bbb8b6609a7, type: 3}
@@ -231,6 +248,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6242b2d19432462408c8065cef721cf8, type: 3}
+--- !u!1 &5841836770470396433 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6242b2d19432462408c8065cef721cf8, type: 3}
+  m_PrefabInstance: {fileID: 6760807142165921600}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6510392224084416683 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6242b2d19432462408c8065cef721cf8, type: 3}

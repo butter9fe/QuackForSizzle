@@ -14,9 +14,23 @@ namespace QuackForSizzle.Player
         private InventoryHandler _inventoryHandler;
         public InventoryHandler InventoryHandler => _inventoryHandler;
 
+        public PlayerState PlayerState = PlayerState.Normal;
+
         private void Awake()
         {
             _inventoryHandler = GetComponentInChildren<InventoryHandler>();
         }
+
+        private void OnEnable()
+        {
+            PlayerState = PlayerState.Normal;
+        }
+    }
+
+    public enum PlayerState
+    {
+        Normal,
+        Cooking,
+        EndGame
     }
 }

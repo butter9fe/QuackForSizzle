@@ -1,5 +1,6 @@
-using UnityEngine;
 using CookOrBeCooked.Systems.EventSystem;
+using QuackForSizzle.Player.EventArgs;
+using UnityEngine;
 
 namespace QuackForSizzle.Player
 {
@@ -59,11 +60,14 @@ namespace QuackForSizzle.Player
         #region  Methods
         private void Listen_TogglePlayerControls(ArgsBase e)
         {
-            BoolArgs args = e as BoolArgs;
-            if (args == null)
+            ToggleControlsArgs args = e as ToggleControlsArgs;
+            if (args == null || args.Player != _thisPlayer.PlayerNumber)
                 return;
 
-            _controller.enabled = args.value;
+            if (_thisPlayer.PlayerState != PlayerState.Normal)
+                return;
+
+            _controller.enabled = args.Enabled;
         }
 
         /// <summary>
@@ -73,6 +77,9 @@ namespace QuackForSizzle.Player
         {
             EventArgs.Move args = e as EventArgs.Move;
             if (args == null || !_controller.enabled || args.Player != _thisPlayer.PlayerNumber)
+                return;
+
+            if (_thisPlayer.PlayerState != PlayerState.Normal)
                 return;
 
             // Calculate movement direction based on camera direction
@@ -97,6 +104,9 @@ namespace QuackForSizzle.Player
         {
             EventArgs.InputArgsBase args = e as EventArgs.InputArgsBase;
             if (args == null || args.Player != _thisPlayer.PlayerNumber)
+                return;
+
+            if (_thisPlayer.PlayerState != PlayerState.Normal)
                 return;
 
             _lateralVelocity = Vector3.zero;
