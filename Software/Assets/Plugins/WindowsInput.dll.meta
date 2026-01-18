@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 98f7b67529df8874eb3dcb5df0f40a39
+guid: 269bba6af1f3e564abe769a100e5594d
 PluginImporter:
   externalObjects: {}
   serializedVersion: 2
@@ -14,7 +14,7 @@ PluginImporter:
   - first:
       Any: 
     second:
-      enabled: 0
+      enabled: 1
       settings: {}
   - first:
       Editor: Editor
@@ -25,16 +25,9 @@ PluginImporter:
   - first:
       Windows Store Apps: WindowsStoreApps
     second:
-      enabled: 1
+      enabled: 0
       settings:
         CPU: AnyCPU
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 98960
-  packageName: Arduino Bluetooth Plugin
-  packageVersion: 5.6.4
-  assetPath: Assets/BluetoothAPI/Plugins/WSA/ArduinoBluetoothAPI.dll
-  uploadId: 618052

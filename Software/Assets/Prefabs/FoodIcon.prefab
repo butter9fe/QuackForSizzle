@@ -115,7 +115,7 @@ MonoBehaviour:
         - Key: 0
           Value: {fileID: 21300000, guid: 9438880355b22934fa7dfa05f9e90f1b, type: 3}
         - Key: 1
-          Value: {fileID: 21300000, guid: 91cb52765e5a7b341a02c56674a83368, type: 3}
+          Value: {fileID: 21300000, guid: 27e369c421740a843869c2834a7b8c12, type: 3}
         - Key: 2
           Value: {fileID: 21300000, guid: 91cb52765e5a7b341a02c56674a83368, type: 3}
   _foodIcon: {fileID: 7642218638803903112}
