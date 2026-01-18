@@ -64,11 +64,11 @@ namespace QuackForSizzle.Player
         #region Event Listeners
         private void Listen_TogglePlayerControls(ArgsBase e)
         {
-            BoolArgs args = e as BoolArgs;
-            if (args == null)
+            EventArgs.ToggleControlsArgs args = e as EventArgs.ToggleControlsArgs;
+            if (args == null || args.Player != _thisPlayer.PlayerNumber)
                 return;
 
-            IsInputEnabled = args.value;
+            IsInputEnabled = args.Enabled;
         }
 
         // Default Input System requires overloaded functions w/o context as well, but we won't be doing anything with them

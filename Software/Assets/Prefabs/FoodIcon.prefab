@@ -113,11 +113,11 @@ MonoBehaviour:
       Value:
         _serializedList:
         - Key: 0
-          Value: {fileID: 21300000, guid: 6d17c8bd617df9d43be3b239f2aae45a, type: 3}
+          Value: {fileID: 21300000, guid: 9438880355b22934fa7dfa05f9e90f1b, type: 3}
         - Key: 1
-          Value: {fileID: 21300000, guid: 157e586f0ebc2294bb78545b6d327279, type: 3}
+          Value: {fileID: 21300000, guid: 91cb52765e5a7b341a02c56674a83368, type: 3}
         - Key: 2
-          Value: {fileID: 21300000, guid: 157e586f0ebc2294bb78545b6d327279, type: 3}
+          Value: {fileID: 21300000, guid: 91cb52765e5a7b341a02c56674a83368, type: 3}
   _foodIcon: {fileID: 7642218638803903112}
 --- !u!1 &2533764365139312618
 GameObject:

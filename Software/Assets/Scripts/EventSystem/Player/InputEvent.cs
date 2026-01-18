@@ -46,7 +46,7 @@ namespace QuackForSizzle.Player
 
             /// <summary>
             /// Player - Disable/Enable player 3rd-person controls. This also enables/disables Cinemachine Camera! 
-            /// [Args type: EventArgs.BoolEventArgs]
+            /// [Args type: EventArgs.ToggleControlsArgs]
             /// </summary>
             TogglePlayerControls = 999,
         }
@@ -73,6 +73,14 @@ namespace QuackForSizzle.Player
             public Move(PlayerNumber player, Vector2 inputVector) : base(player)
             {
                 this.InputVector = inputVector;
+            }
+        }
+
+        public class ToggleControlsArgs : InputArgsBase
+        {
+            public bool Enabled;
+            public ToggleControlsArgs(PlayerNumber player, bool enabled) : base(player) {
+                this.Enabled = enabled;
             }
         }
     }

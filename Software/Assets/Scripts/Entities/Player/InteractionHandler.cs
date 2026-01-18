@@ -39,6 +39,9 @@ namespace QuackForSizzle.Player
 			if (_currInteractable == null)
                 return;
 
+            if (_thisPlayer.PlayerState != PlayerState.Normal)
+                return;
+
             _currInteractable.OnActionPerformed(_thisPlayer.PlayerNumber);
         }
 
@@ -51,6 +54,9 @@ namespace QuackForSizzle.Player
 			if (_currInteractable == null)
                 return;
 
+            if (_thisPlayer.PlayerState != PlayerState.Normal)
+                return;
+
             _currInteractable.OnActionHeld(_thisPlayer.PlayerNumber);
         }
 
@@ -61,6 +67,9 @@ namespace QuackForSizzle.Player
 				return;
 
 			if (_currInteractable == null)
+                return;
+
+            if (_thisPlayer.PlayerState != PlayerState.Normal)
                 return;
 
             _currInteractable.OnActionCancelled(_thisPlayer.PlayerNumber);

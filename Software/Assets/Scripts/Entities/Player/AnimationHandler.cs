@@ -39,6 +39,9 @@ namespace QuackForSizzle.Player
             if (args == null || args.Player != _thisPlayer.PlayerNumber)
                 return;
 
+            if (_thisPlayer.PlayerState != PlayerState.Normal)
+                return;
+
             _animator.SetBool("IsMoving", true);
         }
 
@@ -46,6 +49,9 @@ namespace QuackForSizzle.Player
         {
             EventArgs.InputArgsBase args = e as EventArgs.InputArgsBase;
             if (args == null || args.Player != _thisPlayer.PlayerNumber)
+                return;
+
+            if (_thisPlayer.PlayerState != PlayerState.Normal)
                 return;
 
             _animator.SetBool("IsMoving", false);
