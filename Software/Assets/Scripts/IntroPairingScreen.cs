@@ -23,7 +23,7 @@ public class IntroPairingScreen : MonoBehaviour
         BluetoothManager.Instance.OnConnectionFailedEvent.AddListener(OnBluetoothFailed);
 
         startButton.gameObject.SetActive(false);
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
 
         InputEventManager.Interface.TriggerEvent(QuackForSizzle.Player.Events.InputEvent.TogglePlayerControls, new QuackForSizzle.Player.EventArgs.ToggleControlsArgs(PlayerNumber.Player1, false));
         InputEventManager.Interface.TriggerEvent(QuackForSizzle.Player.Events.InputEvent.TogglePlayerControls, new QuackForSizzle.Player.EventArgs.ToggleControlsArgs(PlayerNumber.Player2, false));
@@ -62,7 +62,7 @@ public class IntroPairingScreen : MonoBehaviour
     {
         InputEventManager.Interface.TriggerEvent(QuackForSizzle.Player.Events.InputEvent.TogglePlayerControls, new QuackForSizzle.Player.EventArgs.ToggleControlsArgs(PlayerNumber.Player1, true));
         InputEventManager.Interface.TriggerEvent(QuackForSizzle.Player.Events.InputEvent.TogglePlayerControls, new QuackForSizzle.Player.EventArgs.ToggleControlsArgs(PlayerNumber.Player2, true));
-        Time.timeScale = 1f;
+        //Time.timeScale = 1f;
         gameObject.SetActive(false);
     }
 }

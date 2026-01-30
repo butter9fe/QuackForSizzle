@@ -28,7 +28,7 @@ namespace QuackForSizzle.Player
         private void OnDisable()
         {
             // Stop listening to events
-            InputEventManager.Interface.StopListeningToEvent(Events.InputEvent.OnMoveHeld, Listen_StartMove);
+            InputEventManager.Interface.StopListeningToEvent(Events.InputEvent.OnMovePerformed, Listen_StartMove);
             InputEventManager.Interface.StopListeningToEvent(Events.InputEvent.OnMoveCancelled, Listen_StopMove);
             InputEventManager.Interface.StopListeningToEvent(Events.InputEvent.OnActionPerformed, Listen_Interact);
         }
